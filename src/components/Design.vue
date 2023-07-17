@@ -2,8 +2,10 @@
 import { ref, reactive, computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 import data from "../data.js";
+import properties from "../properties.json"; // Asegúrate de reemplazar la ruta correcta
 
-const model = reactive(data);
+// const model = reactive(data);
+const model = reactive(properties);
 </script>
 
 <template>
