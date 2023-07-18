@@ -3,34 +3,42 @@ import { ref, reactive, computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 import data from "../data.js";
 
-// const model = reactive(data);
+const models = reactive(data);
 
-const model = reactive([
-  {
-    category: "Reaction",
-    textColor: "text-[#FF5555] bg-[#FF5555] ",
-    score: 80,
-    icon: "../src/assets/images/icon-reaction.svg",
-  },
-  {
-    category: "Memory",
-    textColor: " text-[#FFB21E] bg-[#FFB21E] ",
-    score: 92,
-    icon: "../src/assets/images/icon-memory.svg",
-  },
-  {
-    category: "Verbal",
-    textColor: "text-[#00BB8F] bg-[#00BB8F]  ",
-    score: 61,
-    icon: "../src/assets/images/icon-verbal.svg",
-  },
-  {
-    category: "Visual",
-    textColor: "text-[#1125D6] bg-[#1125D6] ",
-    score: 72,
-    icon: "../src/assets/images/icon-visual.svg",
-  },
-]);
+const model = reactive({
+  Reaction: "Reaction",
+  Memory: "Memory",
+  Verbal: "Verbal",
+  Visual: "Visual",
+});
+
+// const model = reactive([
+
+// {
+//     category: "Reaction",
+//     textColor: "text-[#FF5555] bg-[#FF5555] ",
+//     score: 80,
+//     icon: "../src/assets/images/icon-reaction.svg",
+//   },
+//   {
+//     category: "Memory",
+//     textColor: " text-[#FFB21E] bg-[#FFB21E] ",
+//     score: 92,
+//     icon: "../src/assets/images/icon-memory.svg",
+//   },
+//   {
+//     category: "Verbal",
+//     textColor: "text-[#00BB8F] bg-[#00BB8F]  ",
+//     score: 61,
+//     icon: "../src/assets/images/icon-verbal.svg",
+//   },
+//   {
+//     category: "Visual",
+//     textColor: "text-[#1125D6] bg-[#1125D6] ",
+//     score: 72,
+//     icon: "../src/assets/images/icon-visual.svg",
+//   },
+// ])
 
 // const model = reactive(properties);
 </script>
@@ -62,20 +70,58 @@ const model = reactive([
 
       <div class="flex flex-col bg-white rounded-xl px-8 py-5 md:p-5 w-full">
         <span class="font-bold text-xl pb-3">Summary</span>
-        <div
-          class="flex items-center relative justify-between py-3"
-          v-for="(index, item) in model"
-          :key="item"
-        >
-          <BaseIcon :avatar="index.icon" :username="index.category" />
+
+        <div v-for="(index, item) in models" :key="item">
+          <img :src="index.icon" alt="" />
+        </div>
+
+        <div class="flex items-center relative justify-between py-3 pb-6">
+          <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
+          <img class="pl-2" src="../assets/images/icon-reaction.svg" alt="" />
 
           <input
-            v-model="index.category"
-            class="bg-opacity-5 font-bold absolute w-full px-10 py-2 pr-14 appearance-none rounded-md border border-gray-300 shadow-sm placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-base"
-            :class="index.textColor"
+            v-model="model.Reaction"
+            class="text-[#FF5555] bg-[#FF5555] bg-opacity-10 font-bold absolute w-full px-10 py-2 pr-14 appearance-none rounded-md border border-gray-300 shadow-sm placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-base"
           />
-          <span class="text-xs mr-2">
-            <strong>{{ index.score }}</strong> /100</span
+          <span class="text-xs text-[#FF5555] mr-2">
+            <strong>80</strong> /100</span
+          >
+        </div>
+
+        <div class="flex items-center relative justify-between py-3 pb-6">
+          <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
+          <img class="pl-2" src="../assets/images/icon-memory.svg" alt="" />
+          <input
+            v-model="model.Memory"
+            class="text-[#FFB21E] bg-[#FFB21E] bg-opacity-10 font-bold absolute w-full px-10 py-2 pr-14 appearance-none rounded-md border border-gray-300 shadow-sm placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-base"
+          />
+          <span class="text-xs text-[#FFB21E] mr-2">
+            <strong>92</strong> /100</span
+          >
+        </div>
+
+        <div class="flex items-center relative justify-between py-3 pb-6">
+          <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
+          <img class="pl-2" src="../assets/images/icon-verbal.svg" alt="" />
+
+          <input
+            v-model="model.Verbal"
+            class="text-[#00BB8F] bg-[#00BB8F] bg-opacity-10 font-bold absolute w-full px-10 py-2 pr-14 appearance-none rounded-md border border-gray-300 shadow-sm placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-base"
+          />
+          <span class="text-xs text-[#00BB8F] mr-2">
+            <strong>61</strong> /100</span
+          >
+        </div>
+
+        <div class="flex items-center relative justify-between py-3">
+          <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
+          <img class="pl-2" src="../assets/images/icon-visual.svg" alt="" />
+          <input
+            v-model="model.Visual"
+            class="text-[#1125D6] bg-[#1125D6] bg-opacity-10 font-bold absolute w-full px-10 py-2 pr-14 appearance-none rounded-md border border-gray-300 shadow-sm placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm md:text-base"
+          />
+          <span class="text-xs text-[#1125D6] mr-2">
+            <strong>72</strong> /100</span
           >
         </div>
 
