@@ -89,7 +89,7 @@ const model = reactive({
         </div>
 
         <button
-          class="rounded-full mt-5 bg-[#303B59] md:bg-indigo-700 md:hover:bg-indigo-600 shadow-md hover:font-bold w-full p-3 md:p-2 text-white font-semibold"
+          class="rounded-full mt-7 bg-[#303B59] md:bg-indigo-700 md:hover:bg-indigo-600 shadow-md hover:font-bold w-full p-3 md:p-2 text-white font-semibold"
         >
           Continue
         </button>
