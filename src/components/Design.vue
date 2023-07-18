@@ -1,9 +1,6 @@
 <script setup>
 import { ref, reactive, computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
-import data from "../data.js";
-
-const models = reactive(data);
 
 const model = reactive({
   Reaction: "Reaction",
@@ -11,36 +8,6 @@ const model = reactive({
   Verbal: "Verbal",
   Visual: "Visual",
 });
-
-// const model = reactive([
-
-// {
-//     category: "Reaction",
-//     textColor: "text-[#FF5555] bg-[#FF5555] ",
-//     score: 80,
-//     icon: "../src/assets/images/icon-reaction.svg",
-//   },
-//   {
-//     category: "Memory",
-//     textColor: " text-[#FFB21E] bg-[#FFB21E] ",
-//     score: 92,
-//     icon: "../src/assets/images/icon-memory.svg",
-//   },
-//   {
-//     category: "Verbal",
-//     textColor: "text-[#00BB8F] bg-[#00BB8F]  ",
-//     score: 61,
-//     icon: "../src/assets/images/icon-verbal.svg",
-//   },
-//   {
-//     category: "Visual",
-//     textColor: "text-[#1125D6] bg-[#1125D6] ",
-//     score: 72,
-//     icon: "../src/assets/images/icon-visual.svg",
-//   },
-// ])
-
-// const model = reactive(properties);
 </script>
 
 <template>
@@ -70,10 +37,6 @@ const model = reactive({
 
       <div class="flex flex-col bg-white rounded-xl px-8 py-5 md:p-5 w-full">
         <span class="font-bold text-xl pb-3">Summary</span>
-
-        <div v-for="(index, item) in models" :key="item">
-          <img :src="index.icon" alt="" />
-        </div>
 
         <div class="flex items-center relative justify-between py-3 pb-6">
           <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
