@@ -2,10 +2,37 @@
 import { ref, reactive, computed } from "vue";
 import BaseIcon from "./BaseIcon.vue";
 import data from "../data.js";
-import properties from "../properties.json"; // Asegúrate de reemplazar la ruta correcta
 
 // const model = reactive(data);
-const model = reactive(properties);
+
+const model = reactive([
+  {
+    category: "Reaction",
+    textColor: "text-[#FF5555] bg-[#FF5555] ",
+    score: 80,
+    icon: "../src/assets/images/icon-reaction.svg",
+  },
+  {
+    category: "Memory",
+    textColor: " text-[#FFB21E] bg-[#FFB21E] ",
+    score: 92,
+    icon: "../src/assets/images/icon-memory.svg",
+  },
+  {
+    category: "Verbal",
+    textColor: "text-[#00BB8F] bg-[#00BB8F]  ",
+    score: 61,
+    icon: "../src/assets/images/icon-verbal.svg",
+  },
+  {
+    category: "Visual",
+    textColor: "text-[#1125D6] bg-[#1125D6] ",
+    score: 72,
+    icon: "../src/assets/images/icon-visual.svg",
+  },
+]);
+
+// const model = reactive(properties);
 </script>
 
 <template>
