@@ -50,6 +50,7 @@ const model = reactive({
           />
 
           <input
+            disabled
             type="text"
             id="Reaction"
             name="Reaction"
@@ -69,6 +70,7 @@ const model = reactive({
             alt="Memory"
           />
           <input
+            disabled
             type="text"
             id="Memory"
             name="Memory"
@@ -88,6 +90,7 @@ const model = reactive({
           />
 
           <input
+            disabled
             type="text"
             id="Verbal"
             name="Verbal"
@@ -106,6 +109,7 @@ const model = reactive({
             alt="Visual"
           />
           <input
+            disabled
             type="text"
             id="Visual"
             name="Visual"
