@@ -1,6 +1,5 @@
 <script setup>
 import { ref, reactive, computed } from "vue";
-import BaseIcon from "./BaseIcon.vue";
 
 const model = reactive({
   Reaction: "Reaction",
@@ -13,11 +12,10 @@ const model = reactive({
 <template>
   <div class="flex items-center justify-center h-screen bg-slate-100">
     <div
-      class="flex flex-col md:flex-row h-full md:h-auto md:w-2/5 lg:w-2/5 2xl:w-4/12 bg-white rounded-xl shadow-2xl"
+      class="flex flex-col md:flex-row h-full md:h-auto md:w-3/5 lg:w-2/5 2xl:w-4/12 bg-white rounded-xl shadow-2xl"
     >
       <div
-      
-        class="container flex flex-col pt-6 items-center bg-[#5A3DF9] md:rounded-xl md:pb-12 rounded-b-3xl  pb-8  text-slate-300 text-center w-full"
+        class="container flex flex-col pt-6 items-center bg-[#5A3DF9] md:rounded-xl md:pb-12 rounded-b-3xl pb-8 text-slate-300 text-center w-full"
       >
         <h1 class="pb-6 text-lg font-medium">Your Result</h1>
 
@@ -34,15 +32,12 @@ const model = reactive({
             You scored higher than 65% of the people who have taken these tests.
           </span>
         </div>
-        
       </div>
 
       <div class="flex flex-col bg-white rounded-xl px-8 py-5 md:p-5 w-full">
         <h1 class="font-bold text-xl pb-3">Summary</h1>
 
         <div class="conten-forms">
-          <!-- <BaseIcon :avatar="index.icon" :username="index.category" /> -->
-
           <img
             class="pl-2"
             src="../assets/images/icon-reaction.svg"
@@ -123,8 +118,6 @@ const model = reactive({
 
         <button class="buton">Continue</button>
       </div>
-
-
     </div>
   </div>
 </template>
